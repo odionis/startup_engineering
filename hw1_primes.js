@@ -21,8 +21,8 @@ function is_Prime(number)
     var result = true;
     for ( var j = ini_number; j < number; j++)
     {
-	if ( number % j == 0 )
-	    result = false;
+        if ( number % j == 0 )
+            result = false;
     }
     return result;
 }
@@ -32,14 +32,14 @@ while ( prime_counter < primes_to_show )
     result = is_Prime(i);
     if (result == true)
     {
-		prime_counter++;
-		if (prime_counter <= primes_to_show )
-		    if ( i == 2 )
-		        fs.writeFileSync (outfile, i);
-		    else
-	   	        fs.appendFileSync(outfile, "," + i);
-		else
-		    break;
+        prime_counter++;
+        if (prime_counter <= primes_to_show )
+            if ( i == 2 )
+                fs.writeFileSync (outfile, i);
+            else
+                fs.appendFileSync(outfile, "," + i);
+         else
+            break;
     }
-	i++;
+    i++;
 }
