@@ -11,7 +11,7 @@
 var fs = require('fs');
 
 var ini_number = 2;
-var end_number = 1000; 
+var primes_to_show = 100; 
 var prime_counter = 0;
 var i = ini_number;
 var outfile = "primes.txt";
@@ -27,14 +27,13 @@ function is_Prime(number)
     return result;
 }
 
-while ( prime_counter < 100 )
+while ( prime_counter < primes_to_show )
 {
-	i++;
     result = is_Prime(i);
     if (result == true)
     {
 		prime_counter++;
-		if (prime_counter <= 100)
+		if (prime_counter <= primes_to_show )
 		    if ( i == 2 )
 		        fs.writeFileSync (outfile, i);
 		    else
@@ -42,4 +41,5 @@ while ( prime_counter < 100 )
 		else
 		    break;
     }
+	i++;
 }
